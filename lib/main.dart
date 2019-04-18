@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
+import 'package:hidro_ecom/components/horisontal_listview.dart';
+import 'package:hidro_ecom/components/products.dart';
+import 'package:hidro_ecom/pages/cart.dart';
 void main(){
   runApp(
    MaterialApp(
@@ -17,14 +21,37 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    Widget image_carousel = new Container(
+      height: 200.0,
+      child: new Carousel(
+        boxFit: BoxFit.cover,
+        images: [
+          AssetImage('images/c1.jpg'),
+          AssetImage('images/c2.jpg'),
+          AssetImage('images/c3.jpg'),
+          AssetImage('images/c4.jpg'),
+          AssetImage('images/c5.jpg'),
+          AssetImage('images/c6.jpg'),
+        ],
+        autoplay: true,
+        animationCurve: Curves.fastOutSlowIn,
+        animationDuration: Duration(milliseconds: 1000),
+        dotSize: 4.0,
+        indicatorBgPadding: 4.0,
+        dotColor: Colors.green[300],
+        dotBgColor: Colors.transparent,
+      ),
+    );
     return Scaffold(
       appBar: new AppBar(
         elevation: 0.0,
         backgroundColor: Colors.green[500],
-        title: Text('HidroponikApp'),
+        title: Text('FreshMart'),
         actions: <Widget>[
           new IconButton(icon: Icon(Icons.search),color: Colors.white, onPressed: (){}),
-          new IconButton(icon: Icon(Icons.shopping_cart),color: Colors.white, onPressed: (){})
+          new IconButton(icon: Icon(Icons.shopping_cart),color: Colors.white, onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>new Cart()));
+          })
         ],
       ),
       drawer: new Drawer(
@@ -40,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               decoration: new BoxDecoration(
-                color: Colors.red
+                color: Colors.green[500]
               ),
             ),
 //Body
@@ -66,10 +93,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>new Cart()));
+              },
               child: ListTile(
-                title: Text('Categories'),
-                leading: Icon(Icons.dashboard),
+                title: Text('Shopping Cart'),
+                leading: Icon(Icons.shopping_cart,color: Colors.green,),
               ),
             ),
             InkWell(
@@ -97,6 +126,26 @@ class _HomePageState extends State<HomePage> {
 
           ],
         ),
+      ),
+      body: new ListView(
+        children: <Widget>[
+          image_carousel,
+          new Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: new Text('Categories'),
+          ),
+          HorizontalList(),
+          new Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: new Text('Recent products'),
+          ),
+          //gridview
+          Container(
+            height: 320.0,
+            child: Products(),
+          )
+
+        ],
       ),
     );
   }
