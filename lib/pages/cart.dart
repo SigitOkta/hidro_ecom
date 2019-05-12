@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hidro_ecom/main.dart';
-
 import 'package:hidro_ecom/components/card_products.dart';
+import 'package:hidro_ecom/pages/home.dart';
 class Cart extends StatefulWidget {
   @override
   _CartState createState() => _CartState();

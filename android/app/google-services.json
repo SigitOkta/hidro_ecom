@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "750676192883",
+    "firebase_url": "https://freshmart-99846.firebaseio.com",
+    "project_id": "freshmart-99846",
+    "storage_bucket": "freshmart-99846.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750676192883:android:ae1f74071a998075",
+        "android_client_info": {
+          "package_name": "anakkos.hidro_ecom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750676192883-m8mqoplr33guohu70ufsh7fbpbu04l32.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "anakkos.hidro_ecom",
+            "certificate_hash": "f0efcdde064d7b6845f75903dde4420107101f83"
+          }
+        },
+        {
+          "client_id": "750676192883-ju8hr9d9r3b8g10lals4d4eu7sef3vu9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9quYIsK1lEyWL0Q5bQQeho04aZZ7wX34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750676192883-ju8hr9d9r3b8g10lals4d4eu7sef3vu9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
